@@ -1,7 +1,16 @@
 // Complete the swapChild method
 //ASSIGNMENT TASK MUST SUBMIT
 public class Task4 {
-
+    private BTNode newNode(Object elem){ //swap
+        BTNode temp = new BTNode();
+        temp.elem = elem;
+        temp.left = temp.right = null;
+        return temp;
+    }
+    private void swapall(BTNode root, int M){
+        swapChild(root, 1, M);
+    }
+    
     //===================================TASK#4===================================
     // This method takes only 3 parameters
     // 1st one is root of the given tree
@@ -12,6 +21,13 @@ public class Task4 {
     // You can use extra helper private static methods as per need
     public static void swapChild( BTNode root, int lvl, int M ){
         //TO DO
-    }
+        if(root == null || root.left == null && root.right == null)return; // base case
+        if((lvl <= M)){
+            Node temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+        }
+        swapChild(root.left, lvl+1,M);
+        swapChild(root.right, lvl+1, M);
     //============================================================================
 }

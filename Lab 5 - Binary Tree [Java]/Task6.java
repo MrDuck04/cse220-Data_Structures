@@ -1,7 +1,10 @@
 // Complete the levelSum method
 //ASSIGNMENT TASK MUST SUBMIT
 public class Task6 {
-
+    private int height(BTNode root){
+        if(root==null) return -1;
+        return (height(root.left)+height(root.right));
+    }
     //===================================TASK#6===================================
     // This method takes only 1 parameter which is root of the given tree
     // This method returns an Integer

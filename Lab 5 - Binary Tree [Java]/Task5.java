@@ -2,19 +2,19 @@
 //ASSIGNMENT TASK MUST SUBMIT
 public class Task5 {
     
-    private Integer sumTree(BTNode root){
+    private static Integer sumTree(BTNode root){
         if(root == null)return 0;
         return ((Integer)root.elem + (sumTree(root.left) + sumTree(root.right)));
     }
 
     private static Integer leftSubtreeSum(BTNode root){
         if(root == null || root.left == null)return 0;
-        return new Task5().sumTree(root.left);
+        return sumTree(root.left);
     }
     
     private static Integer rightSubtreeSum(BTNode root){
         if(root == null || root.right == null)return 0;
-        return new Task5().sumTree(root.right);
+        return sumTree(root.right);
     }
     
     //===================================TASK#5===================================

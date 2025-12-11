@@ -7,15 +7,15 @@ public class Task5 {
         return ((Integer)root.elem + (sumTree(root.left) + sumTree(root.right)));
     }
 
-    private static Integer leftSubtreeSum(BTNode root){
-        if(root == null || root.left == null)return 0;
-        return sumTree(root.left);
-    }
+    // private static Integer leftSubtreeSum(BTNode root){
+    //     if(root == null || root.left == null)return 0;
+    //     return sumTree(root.left);
+    // }
     
-    private static Integer rightSubtreeSum(BTNode root){
-        if(root == null || root.right == null)return 0;
-        return sumTree(root.right);
-    }
+    // private static Integer rightSubtreeSum(BTNode root){
+    //     if(root == null || root.right == null)return 0;
+    //     return sumTree(root.right);
+    // }
     
     //===================================TASK#5===================================
     // This method takes only 1 parameter which is root of the given tree
@@ -24,7 +24,7 @@ public class Task5 {
     // You can use extra helper private static methods with extra extra params as per need
     public static Integer subtractSummation( BTNode root ){
         //TO DO
-        return (leftSubtreeSum(root) - rightSubtreeSum( root )); //remove this line
+        return (sumTree(root.left) - sumTree(root.right)); //remove this line
     }
     //============================================================================
 

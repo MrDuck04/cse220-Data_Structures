@@ -38,10 +38,10 @@ public class BinarySearchTreeTester {
         taskPrint("\n========================== TASK#1 =========================");
         taskPrint("================== Lowest Common Ancestor =================");
         
-        int[] arr = {15,10,25,8,12,20,30,6,9,18,22};
-        BSTNode root = new BSTNode(15);
-        for (int j = 0; j < arr.length; j++) {
-            BSTNodeCreator(root, arr[j]);
+        int[] arr1 = {15,10,25,8,12,20,30,6,9,18,22};
+        BSTNode root = new BSTNode(arr1[0]);
+        for (int j = 1; j < arr1.length; j++) {
+            BSTNodeCreator(root, arr1[j]);
         }
         
         
@@ -109,6 +109,7 @@ public class BinarySearchTreeTester {
         taskPrint("\n==================== TASK#2 =====================");
         taskPrint("================== Find Path ====================");
         
+        int[] arr;
         BSTNode root = new BSTNode(30);
         root.left = new BSTNode(10);
         root.left.left = new BSTNode(3);
@@ -148,9 +149,11 @@ public class BinarySearchTreeTester {
         taskPrint("\n====================== TASK#3 =====================");
         taskPrint("================== Sum of Leaves ==================");
         
-        BSTNode root = new BSTNode(30);
-        root.left = new BSTNode(10);
-        root.left.left = new BSTNode(3);
+        int[] arr3 = {30,10,40,3,15,35,55,2,36};
+        BSTNode root = new BSTNode(arr3[0]);
+        for (int j = 1; j < arr3.length; j++) {
+            BSTNodeCreator(root, arr3[j]);
+        }
         // CONSTRUCT THE REST OF THE TREE ON YOUR OWN
         // FROM THE EXAMPLE SHOWN IN THE QUESTION
         // TO DO

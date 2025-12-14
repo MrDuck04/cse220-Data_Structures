@@ -23,44 +23,84 @@ public class BinarySearchTreeTester {
 	System.out.println(cyan+"\n===================== TheEnd ===================="+endFormat);
     }
     
+    public static BSTNode BSTNodeCreator(BSTNode node, int key){
+        if (node == null) return (new BSTNode(key));
+        if (key < node.elem) {
+            node.left = BSTNodeCreator(node.left, key);
+        }
+        if(key > node.elem){
+            node.right = BSTNodeCreator(node.right, key);
+        }
+        return node;
+    }
+
     public static void task1(){
         taskPrint("\n========================== TASK#1 =========================");
         taskPrint("================== Lowest Common Ancestor =================");
         
+        int[] arr = {15,10,25,8,12,20,30,6,9,18,22};
         BSTNode root = new BSTNode(15);
-        root.left = new BSTNode(10);
-        root.left.left = new BSTNode(8);
+        for (int j = 0; j < arr.length; j++) {
+            BSTNodeCreator(root, arr[j]);
+        }
+        
+        
+
         // TO DO
         // CONSTRUCT THE REST OF THE TREE ON YOUR OWN FROM 
         // THE EXAMPLE SHOWN IN THE QUESTION
 
         // Once the you're done creating the tree then uncomment the following lines
         
-        // System.out.println("::Given Binary Tree::");
-        // BSTPrinter.printNode(root);
-        // System.out.println("--------------------------------------------------");
+        System.out.println("::Given Binary Tree::");
+        BSTPrinter.printNode(root);
+        System.out.println("--------------------------------------------------");
         
         // //First test case is already written for you so, don' change it
-        // String t1 = "Task#1 Test#1";
-        // System.out.println(":Expected Output: LCA(6,12)=10");
-        // Integer out = Task1.lowestCommonAncestor(root,6,12);
-        // System.out.println(":  Your Output  : LCA(6,12)="+out);
-        // if(out==null || out!=10) failedPrint(t1);
-        // else successPrint(t1);
+        String t1 = "Task#1 Test#1";
+        System.out.println(":Expected Output: LCA(6,12)=10");
+        Integer out = Task1.lowestCommonAncestor(root,6,12);
+        System.out.println(":  Your Output  : LCA(6,12)="+out);
+        if(out==null || out!=10) failedPrint(t1);
+        else successPrint(t1);
         
         // //Write the rest of the test cases yourself
         
         // System.out.println("------------------------------");
         // // Test Case 2 (20,6)
+        String t2 = "Task#1 Test#2";
+        System.out.println(":Expected Output: LCA(20,6)=15");
+        Integer out2 = Task1.lowestCommonAncestor(root,20,6);
+        System.out.println(":  Your Output  : LCA(20,6)="+out2);
+        if(out2==null || out2!=15) failedPrint(t2);
+        else successPrint(t2);
         // // TO DO
         // System.out.println("------------------------------");
         // // Test Case 3 (18,22)
+        String t3 = "Task#1 Test#3";
+        System.out.println(":Expected Output: LCA(18,22)=20");
+        Integer out3 = Task1.lowestCommonAncestor(root,18,22);
+        System.out.println(":  Your Output  : LCA(18,22)="+out3);
+        if(out3==null || out3!=20) failedPrint(t3);
+        else successPrint(t3);
         // // TO DO
         // System.out.println("------------------------------");
         // // Test Case 4 (20,25)
+        String t4 = "Task#1 Test#4";
+        System.out.println(":Expected Output: LCA(20,25)=25");
+        Integer out4 = Task1.lowestCommonAncestor(root,20,25);
+        System.out.println(":  Your Output  : LCA(20,25)="+out4);
+        if(out4==null || out4!=25) failedPrint(t4);
+        else successPrint(t4);
         // // TO DO
         // System.out.println("------------------------------");
         // // Test Case 5 (10,12)
+        String t5 = "Task#1 Test#5";
+        System.out.println(":Expected Output: LCA(10,12)=10");
+        Integer out5 = Task1.lowestCommonAncestor(root,10,12);
+        System.out.println(":  Your Output  : LCA(10,12)="+out5);
+        if(out5==null || out5!=10) failedPrint(t5);
+        else successPrint(t5);
         // // TO DO
         // System.out.println("------------------------------");
     }

@@ -1,16 +1,16 @@
 //Assignment Task (must Submit)
 // Complete the isBST method
 public class Task6 {
-    static private BSTNode check(BSTNode node){
-        if(node == null)return null;
-        if(node != null && (node.left.elem > node.elem || node.right.elem < node.elem)){
-            return null;
-        }
-        node.left = check(node.left);
-        node.right = check(node.right);
+    // static private BSTNode check(BSTNode node){
+    //     if(node == null)return null;
+    //     if(node != null && (node.left.elem > node.elem || node.right.elem < node.elem)){
+    //         return null;
+    //     }
+    //     node.left = check(node.left);
+    //     node.right = check(node.right);
 
-        return node;
-    }
+    //     return node;
+    // }
     //===================================TASK#6======================
     // This method takes only one parameter
     // it is root of the given tree
